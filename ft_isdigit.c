@@ -6,12 +6,13 @@
 /*   By: jalcausa <jalcausa@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/12 17:48:56 by jalcausa          #+#    #+#             */
-/*   Updated: 2024/09/12 18:06:21 by jalcausa         ###   ########.fr       */
+/*   Updated: 2024/09/12 18:10:08 by jalcausa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+//Check if the character is a digit
 int ft_isdigit(int c)
 {
     if (c >= '0' && c <= '9')
