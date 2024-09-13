@@ -6,7 +6,7 @@
 /*   By: jalcausa <jalcausa@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/13 13:06:16 by jalcausa          #+#    #+#             */
-/*   Updated: 2024/09/13 14:49:07 by jalcausa         ###   ########.fr       */
+/*   Updated: 2024/09/13 18:20:24 by jalcausa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	*ft_memset(void *s, int c, size_t len)
 	i = 0;
 	while (i < len)
 	{
-		((char *)s)[i] = (unsigned char)c;
+		((unsigned char *)s)[i] = c;
 		++i;
 	}
 	return (s);

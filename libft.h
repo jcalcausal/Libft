@@ -6,7 +6,7 @@
 /*   By: jalcausa <jalcausa@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/11 19:46:37 by jalcausa          #+#    #+#             */
-/*   Updated: 2024/09/13 12:27:44 by jalcausa         ###   ########.fr       */
+/*   Updated: 2024/09/13 18:34:51 by jalcausa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,5 +25,8 @@ int		ft_isdigit(int c);
 int		ft_isalnum(int c);
 int		ft_isascii(int c);
 size_t	ft_strlen(const char *str);
+void	*ft_memset(void *s, int c, size_t len);
+void	ft_bzero(void *s, size_t n);
+void	*ft_memcpy(void *dst, const void *src, size_t n);
 
 #endif
