@@ -6,7 +6,7 @@
 /*   By: jalcausa <jalcausa@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/12 18:44:47 by jalcausa          #+#    #+#             */
-/*   Updated: 2024/09/12 19:05:53 by jalcausa         ###   ########.fr       */
+/*   Updated: 2024/09/13 12:25:00 by jalcausa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 // Return the length of a given string
 size_t	ft_strlen(const char *str)
 {
-	size_t i;
+	size_t	i;
 
 	while (str[i])
 		++i;
