@@ -6,7 +6,7 @@
 /*   By: jalcausa <jalcausa@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/11 19:46:37 by jalcausa          #+#    #+#             */
-/*   Updated: 2024/09/15 13:53:37 by jalcausa         ###   ########.fr       */
+/*   Updated: 2024/09/15 14:08:31 by jalcausa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,5 +31,7 @@ void	*ft_memcpy(void *dst, const void *src, size_t n);
 void	*ft_memmove(void *dst, const void *src, size_t n);
 size_t	ft_strlcpy(char *dest, const char *src, size_t dstsize);
 size_t	ft_strlcat(char *dest, const char *src, size_t size);
+int		ft_toupper(int l);
+int		ft_tolower(int l);
 
 #endif
