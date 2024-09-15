@@ -1,39 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jalcausa <jalcausa@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/15 12:13:48 by jalcausa          #+#    #+#             */
-/*   Updated: 2024/09/15 13:28:07 by jalcausa         ###   ########.fr       */
+/*   Created: 2024/09/15 13:14:35 by jalcausa          #+#    #+#             */
+/*   Updated: 2024/09/15 13:27:59 by jalcausa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <libft.h>
 
-//Copies len bytes of src into dst managing overlapping
-void	*ft_memmove(void *dst, const void *src, size_t n)
+/* 
+Copies string src to dest ending it with a NULL char and returns
+the length of the string that it tried to create (the length of src)
+*/
+size_t	ft_strlcpy(char *dest, const char *src, size_t dstsize)
 {
 	size_t	i;
 
-	if (!dst && !src)
-		return (0);
 	i = 0;
-	if (dst < src)
+	if (dstsize == 0)
+		return (ft_strlen(src));
+	while (src[i] && i < dstsize - 1)
 	{
-		while (i < n)
-		{
-			*(char *)(dst + i) = *(char *)(src + i);
-			++i;
-		}
+		dest[i] = src[i];
+		++i;
 	}
-	else
-	{
-		while (n > 0)
-		{
-			*(char *)(dst + n - 1) = *(char *)(src + n - 1);
-			--n;
-		}
-	}
+	return (ft_strlen(src));
 }
