@@ -1,30 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jalcausa <jalcausa@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/16 12:48:28 by jalcausa          #+#    #+#             */
-/*   Updated: 2024/09/16 13:15:23 by jalcausa         ###   ########.fr       */
+/*   Created: 2024/09/16 13:04:22 by jalcausa          #+#    #+#             */
+/*   Updated: 2024/09/16 13:15:06 by jalcausa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 /*
-Returns a pointer to the last occurance of a character c in a string s
+Compares the given strings in lexicographical order (by their ASCII value)
+with a maximun of n chars in both strings
+Retruns 0 if they are equal, a positive value is s1>s2 and a negative if s1<s2
 */
-char	*ft_strrchr(const char *s, int c)
+int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-	int	i;
+	size_t	i;
 
-	i = ft_strlen(s);
-	while (i >= 0)
+	if (n == 0)
+		return (0);
+	i = 0;
+	while (i < n && s1[i] && s2[i])
 	{
-		if (s[i] == (char)c)
-			return ((char *)&s[i]);
-		--i;
+		if (s1[i] != s2[i])
+			return ((unsigned char)(s1[i]) - (unsigned char)(s2[i]));
+		else
+			++i;
 	}
 	return (0);
 }
