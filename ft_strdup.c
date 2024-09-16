@@ -6,7 +6,7 @@
 /*   By: jalcausa <jalcausa@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/16 18:47:44 by jalcausa          #+#    #+#             */
-/*   Updated: 2024/09/16 19:36:59 by jalcausa         ###   ########.fr       */
+/*   Updated: 2024/09/16 19:46:30 by jalcausa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,9 +26,10 @@ char	*ft_strdup(const char *s1)
 	if (!res)
 		return (0);
 	i = 0;
-	while (i < n)
+	while (i < n + 1)
 	{
 		res[i] = (char)s1[i];
+		++i;
 	}
 	return (res);
 }
