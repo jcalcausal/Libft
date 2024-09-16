@@ -6,7 +6,7 @@
 /*   By: jalcausa <jalcausa@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/15 13:36:13 by jalcausa          #+#    #+#             */
-/*   Updated: 2024/09/15 13:53:46 by jalcausa         ###   ########.fr       */
+/*   Updated: 2024/09/16 20:18:23 by jalcausa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,18 +24,17 @@ size_t	ft_strlcat(char *dest, const char *src, size_t size)
 	size_t	i;
 	size_t	j;
 
-	i = 0;
-	j = 0;
 	srclen = ft_strlen(src);
 	destlen = ft_strlen(dest);
-	while (dest[i])
-		++i;
-	if (size == 0 || size <= destlen)
-		return (destlen + srclen);
-	while (src[j] && j < (size - destlen - 1))
+	if (size <= destlen)
+		return (size + srclen);
+	i = destlen;
+	j = 0;
+	while (src[j] && i + j < (size - 1))
 	{
-		dest[i++] = src [j++];
+		dest[i + j] = src [j];
+		++j;
 	}
-	dest[i] = '\0';
+	dest[i + j] = '\0';
 	return (destlen + srclen);
 }
