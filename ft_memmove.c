@@ -6,7 +6,7 @@
 /*   By: jalcausa <jalcausa@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/15 12:13:48 by jalcausa          #+#    #+#             */
-/*   Updated: 2024/09/15 13:28:07 by jalcausa         ###   ########.fr       */
+/*   Updated: 2024/09/16 19:29:01 by jalcausa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,4 +36,5 @@ void	*ft_memmove(void *dst, const void *src, size_t n)
 			--n;
 		}
 	}
+	return (dst);
 }
