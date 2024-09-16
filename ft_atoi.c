@@ -6,7 +6,7 @@
 /*   By: jalcausa <jalcausa@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/16 17:59:11 by jalcausa          #+#    #+#             */
-/*   Updated: 2024/09/16 18:15:47 by jalcausa         ###   ########.fr       */
+/*   Updated: 2024/09/16 20:00:55 by jalcausa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,12 @@ int	ft_atoi(const char *str)
 		++i;
 	}
 	if (str[i] == '-')
+	{
 		sign = -1;
-	++i;
+		++i;
+	}
+	else if (str[i] == '+')
+		++i;
 	while (str[i] && str[i] >= '0' && str[i] <= '9')
 	{
 		res = res * 10 + (str[i] - '0');
