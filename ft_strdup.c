@@ -6,7 +6,7 @@
 /*   By: jalcausa <jalcausa@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/16 18:47:44 by jalcausa          #+#    #+#             */
-/*   Updated: 2024/09/16 18:53:18 by jalcausa         ###   ########.fr       */
+/*   Updated: 2024/09/16 19:36:59 by jalcausa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ char	*ft_strdup(const char *s1)
 {
 	size_t		n;
 	size_t		i;
-	char	*res;
+	char		*res;
 
 	n = ft_strlen(s1);
 	res = (char *)malloc((n + 1) * sizeof(char));
