@@ -6,7 +6,7 @@
 /*   By: jalcausa <jalcausa@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/15 13:14:35 by jalcausa          #+#    #+#             */
-/*   Updated: 2024/09/15 13:27:59 by jalcausa         ###   ########.fr       */
+/*   Updated: 2024/09/16 10:18:41 by jalcausa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,5 +28,6 @@ size_t	ft_strlcpy(char *dest, const char *src, size_t dstsize)
 		dest[i] = src[i];
 		++i;
 	}
+	dest[i] = '\0';
 	return (ft_strlen(src));
 }
