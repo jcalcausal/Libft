@@ -6,12 +6,16 @@
 /*   By: jalcausa <jalcausa@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/16 17:59:11 by jalcausa          #+#    #+#             */
-/*   Updated: 2024/09/16 18:08:59 by jalcausa         ###   ########.fr       */
+/*   Updated: 2024/09/16 18:15:47 by jalcausa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+/*
+Converts a given string starting with an arbitrary number of spaces (as defined
+in isspace(3) and a single sign into an int)
+*/
 int	ft_atoi(const char *str)
 {
 	int	i;

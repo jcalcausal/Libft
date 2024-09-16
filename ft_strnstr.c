@@ -6,12 +6,16 @@
 /*   By: jalcausa <jalcausa@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/16 17:37:15 by jalcausa          #+#    #+#             */
-/*   Updated: 2024/09/16 17:55:05 by jalcausa         ###   ########.fr       */
+/*   Updated: 2024/09/16 18:14:22 by jalcausa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+/*
+Checks if a string (haystack) contains a substring (needle) and returns
+a pointer to the first char in case it contains it and null otherwise
+*/
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
 	size_t	i;
