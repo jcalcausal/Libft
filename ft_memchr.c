@@ -6,7 +6,7 @@
 /*   By: jalcausa <jalcausa@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/16 13:30:46 by jalcausa          #+#    #+#             */
-/*   Updated: 2024/09/16 13:48:49 by jalcausa         ###   ########.fr       */
+/*   Updated: 2024/09/16 13:51:05 by jalcausa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ void	*ft_memchr(const void *s, int c, size_t n)
 	while (i < n)
 	{
 		if (p[i] == (unsigned char)c)
-			return ((void *)p + i);
+			return ((void *)p + i); // ((void *) &p[i])
 		++i;
 	}
 	return (0);
