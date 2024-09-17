@@ -1,33 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_calloc.c                                        :+:      :+:    :+:   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jalcausa <jalcausa@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/16 18:11:59 by jalcausa          #+#    #+#             */
-/*   Updated: 2024/09/17 09:45:41 by jalcausa         ###   ########.fr       */
+/*   Created: 2024/09/17 09:26:48 by jalcausa          #+#    #+#             */
+/*   Updated: 2024/09/17 09:46:36 by jalcausa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 /*
-Does the same thing as malloc but initializing all bytes in the memory with 0
-num indicates the number of elements to asign and size the size of each one
+Returns the subtring of s starting at pos start with a max size of len
 */
-void	*ft_calloc(size_t count, size_t size)
+char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	void	*res;
+	char	*res;
 	size_t	i;
 
-	if (count != 0 && size > __SIZE_MAX__ / count)
+	if (!s)
 		return (0);
-	res = (void *)malloc(count * size);
+	if (start > ft_strlen(s))
+		return (ft_strdup(""));
+	if (len > ft_strlen(s + start))
+		len = ft_strlen(s + start);
+	res = (char *)malloc((len + 1) * sizeof(char));
 	if (!res)
 		return (0);
 	i = 0;
-	while (i < count * size)
-		((unsigned char *)res)[i++] = 0;
+	while (s[i] && i < len)
+	{
+		res[i] = s[start + i];
+		++i;
+	}
 	return (res);
 }
