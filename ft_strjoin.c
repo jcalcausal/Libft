@@ -6,7 +6,7 @@
 /*   By: jalcausa <jalcausa@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/17 17:18:41 by jalcausa          #+#    #+#             */
-/*   Updated: 2024/09/17 17:25:43 by jalcausa         ###   ########.fr       */
+/*   Updated: 2024/09/17 18:01:34 by jalcausa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	char	*res;
 	size_t	size;
 	size_t	i;
+	size_t	j;
 
 	size = ft_strlen(s1) + ft_strlen(s2);
 	res = (char *)malloc((size + 1) * sizeof(char));
@@ -31,10 +32,12 @@ char	*ft_strjoin(char const *s1, char const *s2)
 		res[i] = s1[i];
 		++i;
 	}
-	while (s2[i])
+	j = 0;
+	while (s2[j])
 	{
-		res[i] = s2[i];
+		res[i] = s2[j];
 		++i;
+		++j;
 	}
 	res[i] = '\0';
 	return (res);
