@@ -6,7 +6,7 @@
 /*   By: jalcausa <jalcausa@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/17 09:26:48 by jalcausa          #+#    #+#             */
-/*   Updated: 2024/09/17 09:46:36 by jalcausa         ###   ########.fr       */
+/*   Updated: 2024/09/17 17:06:11 by jalcausa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,10 +30,11 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	if (!res)
 		return (0);
 	i = 0;
-	while (s[i] && i < len)
+	while (i < len)
 	{
 		res[i] = s[start + i];
 		++i;
 	}
+	res[i] = '\0';
 	return (res);
 }
