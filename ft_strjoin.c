@@ -1,39 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_substr.c                                        :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jalcausa <jalcausa@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/17 09:26:48 by jalcausa          #+#    #+#             */
-/*   Updated: 2024/09/17 17:18:06 by jalcausa         ###   ########.fr       */
+/*   Created: 2024/09/17 17:18:41 by jalcausa          #+#    #+#             */
+/*   Updated: 2024/09/17 17:25:43 by jalcausa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 /*
-Returns the subtring of s starting at pos start with a max size of len. 
-If len is bigger than the max substring, it just uses the max substring length
+Returns the result of concatenating string s2 to string s1 (s1 + s2)
 */
-char	*ft_substr(char const *s, unsigned int start, size_t len)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
 	char	*res;
+	size_t	size;
 	size_t	i;
 
-	if (!s)
-		return (0);
-	if (start > ft_strlen(s))
-		return (ft_strdup(""));
-	if (len > ft_strlen(s + start))
-		len = ft_strlen(s + start);
-	res = (char *)malloc((len + 1) * sizeof(char));
+	size = ft_strlen(s1) + ft_strlen(s2);
+	res = (char *)malloc((size + 1) * sizeof(char));
 	if (!res)
 		return (0);
 	i = 0;
-	while (i < len)
+	while (s1[i])
 	{
-		res[i] = s[start + i];
+		res[i] = s1[i];
+		++i;
+	}
+	while (s2[i])
+	{
+		res[i] = s2[i];
 		++i;
 	}
 	res[i] = '\0';
