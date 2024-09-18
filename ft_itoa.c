@@ -6,12 +6,15 @@
 /*   By: jalcausa <jalcausa@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/18 19:51:46 by jalcausa          #+#    #+#             */
-/*   Updated: 2024/09/18 23:41:47 by jalcausa         ###   ########.fr       */
+/*   Updated: 2024/09/19 00:00:37 by jalcausa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
+/*
+The last increment of res is for the last digit, in case the number is negative
+we need another one for the - sign
+*/
 static int	ft_len(int n)
 {
 	int	res;
@@ -24,12 +27,17 @@ static int	ft_len(int n)
 		++res;
 		i = i / 10;
 	}
+	++res;
 	if (n >= 0)
-		return (res + 1);
+		return (res);
 	else
-		return (res + 2);
+		return (res + 1);
 }
 
+/*
+Returns a string representating the given int with a - sign in the first 
+position in case it is negative 
+*/
 char	*ft_itoa(int n)
 {
 	int		len;
@@ -45,7 +53,7 @@ char	*ft_itoa(int n)
 		return (NULL);
 	if (n == 0)
 		res[0] = '0';
-	else
+	else if (n < 0)
 	{
 		res[0] = '-';
 		n = -n;
