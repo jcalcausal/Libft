@@ -6,7 +6,7 @@
 /*   By: jalcausa <jalcausa@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/18 19:51:46 by jalcausa          #+#    #+#             */
-/*   Updated: 2024/09/18 20:04:48 by jalcausa         ###   ########.fr       */
+/*   Updated: 2024/09/18 23:41:47 by jalcausa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,28 +37,24 @@ char	*ft_itoa(int n)
 	char	*res;
 
 	if (n == -2147483648)
-		return ("-2147483648\0");
+		return (ft_strdup("-2147483648"));
+	len = ft_len(n);
+	i = len - 1;
+	res = (char *)malloc((len + 1) * sizeof(char));
+	if (!res)
+		return (NULL);
+	if (n == 0)
+		res[0] = '0';
 	else
 	{
-		len = ft_len(n);
-		i = len - 1;
-		res = (char *)malloc((len + 1) * sizeof(char));
-		if (!res)
-			return (NULL);
-		if (n >= 0)
-			res[0] = '+';
-		else
-		{
-			res[0] = '-';
-			n = -n;
-		}
-		while (i > 0)
-		{
-			res[i] = n % 10 + '0';
-			n = n / 10;
-			--i;
-		}
-		res[len] = '\0';
-		return (res);
+		res[0] = '-';
+		n = -n;
 	}
+	while (n != 0)
+	{
+		res[i--] = n % 10 + '0';
+		n = n / 10;
+	}
+	res[len] = '\0';
+	return (res);
 }
