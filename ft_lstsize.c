@@ -1,0 +1,31 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_lstsize.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jalcausa <jalcausa@student.42malaga.com    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/09/20 09:54:32 by jalcausa          #+#    #+#             */
+/*   Updated: 2024/09/20 10:11:45 by jalcausa         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "libft.h"
+
+int	ft_lstsize(t_list *lst)
+{
+	t_list	*current;
+	int		res;
+
+	current = 0;
+	if (!lst)
+		return (0);
+	res = 0;
+	current = lst;
+	while (current != NULL)
+	{
+		++res;
+		current = current->next;
+	}
+	return (res);
+}
