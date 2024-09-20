@@ -36,22 +36,30 @@ SRCS	= 	ft_isalpha.c 	\
 			ft_putendl_fd.c	\
 			ft_putnbr_fd.c
 
+SRCS_BONUS	=	ft_lstnew.c
+
 OBJS	= $(SRCS:%.c=%.o)
+
+OBJS_BONUS = $(SRCS_BONUS:%.c=%.o)
 
 FLAGS	= -Wall -Wextra -Werror
 
 $(NAME):
-	gcc $(FLAGS) -c $(SRCS) -I./
+	cc $(FLAGS) -c $(SRCS) -I./
 	ar rcs $(NAME) $(OBJS)
 
 all: $(NAME)
+
+bonus: all
+	cc $(FLAGS) -c $(SRCS_BONUS) -I./
+	ar rcs $(NAME) $(OBJS_BONUS)
 
 clean:
 		rm -f $(OBJS)
 
 fclean: clean
 		rm -f $(NAME)
-		
+
 re: fclean all
 
-.PHONY: all clean fclean re
+.PHONY: all clean fclean re bonus
