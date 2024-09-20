@@ -6,12 +6,15 @@
 /*   By: jalcausa <jalcausa@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/20 18:57:18 by jalcausa          #+#    #+#             */
-/*   Updated: 2024/09/20 19:01:18 by jalcausa         ###   ########.fr       */
+/*   Updated: 2024/09/20 19:25:06 by jalcausa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+/*
+Removes the given node and the following
+*/
 void	ft_lstclear(t_list **lst, void (*del)(void *))
 {
 	t_list	*next;
