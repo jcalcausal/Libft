@@ -6,7 +6,7 @@
 /*   By: jalcausa <jalcausa@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/20 19:13:41 by jalcausa          #+#    #+#             */
-/*   Updated: 2024/09/21 17:45:49 by jalcausa         ###   ########.fr       */
+/*   Updated: 2024/09/21 18:15:21 by jalcausa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
 	t_list	*new_list;
 	t_list	*new_node;
-	
+
 	if (!lst || !f || !del)
 		return (NULL);
 	new_list = NULL;
