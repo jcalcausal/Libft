@@ -6,12 +6,15 @@
 /*   By: jalcausa <jalcausa@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/20 09:54:32 by jalcausa          #+#    #+#             */
-/*   Updated: 2024/09/20 10:11:45 by jalcausa         ###   ########.fr       */
+/*   Updated: 2024/09/25 08:58:35 by jalcausa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+/*
+Returns the size of the given list lst
+*/
 int	ft_lstsize(t_list *lst)
 {
 	t_list	*current;
