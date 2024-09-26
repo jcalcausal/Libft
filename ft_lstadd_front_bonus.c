@@ -1,25 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstdelone.c                                     :+:      :+:    :+:   */
+/*   ft_lstadd_front_bonus.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jalcausa <jalcausa@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/20 18:47:01 by jalcausa          #+#    #+#             */
-/*   Updated: 2024/09/20 18:49:03 by jalcausa         ###   ########.fr       */
+/*   Created: 2024/09/20 09:35:05 by jalcausa          #+#    #+#             */
+/*   Updated: 2024/09/26 21:47:22 by jalcausa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 /*
-Frees the content of thr node lst usign the given function del and then 
-frees the node
+Adds node new as the first node of a list. First it changes the next element of
+new to the previous first element of the list and then changes the pointer lst
+(that determines the beginning of the list) to new, the new first element
 */
-void	ft_lstdelone(t_list *lst, void (*del)(void *))
+void	ft_lstadd_front(t_list **lst, t_list *new)
 {
-	if (!lst || !del)
+	if (!lst || !new)
 		return ;
-	del(lst->content);
-	free(lst);
+	new->next = *lst;
+	*lst = new;
 }

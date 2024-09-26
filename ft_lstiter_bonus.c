@@ -1,30 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstclear.c                                      :+:      :+:    :+:   */
+/*   ft_lstiter_bonus.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jalcausa <jalcausa@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/20 18:57:18 by jalcausa          #+#    #+#             */
-/*   Updated: 2024/09/20 19:25:06 by jalcausa         ###   ########.fr       */
+/*   Created: 2024/09/20 19:03:00 by jalcausa          #+#    #+#             */
+/*   Updated: 2024/09/26 22:12:27 by jalcausa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 /*
-Removes the given node and the following
+Iterates through the list lst and applies fucntion f to the content of each node
 */
-void	ft_lstclear(t_list **lst, void (*del)(void *))
+void	ft_lstiter(t_list *lst, void (*f)(void *))
 {
-	t_list	*next;
+	t_list	*aux;
 
-	if (!lst)
+	if (!lst || !f)
 		return ;
-	while (*lst)
+	aux = lst;
+	while (aux)
 	{
-		next = (*lst)->next;
-		ft_lstdelone(*lst, del);
-		*lst = next;
+		f(aux->content);
+		aux = aux->next;
 	}
 }

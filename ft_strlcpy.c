@@ -6,11 +6,11 @@
 /*   By: jalcausa <jalcausa@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/15 13:14:35 by jalcausa          #+#    #+#             */
-/*   Updated: 2024/09/16 10:18:41 by jalcausa         ###   ########.fr       */
+/*   Updated: 2024/09/26 21:52:12 by jalcausa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
+#include "libft.h"
 
 /* 
 Copies string src to dest ending it with a NULL char and returns

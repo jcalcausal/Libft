@@ -1,30 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstiter.c                                       :+:      :+:    :+:   */
+/*   ft_lstsize_bonus.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jalcausa <jalcausa@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/20 19:03:00 by jalcausa          #+#    #+#             */
-/*   Updated: 2024/09/25 08:57:18 by jalcausa         ###   ########.fr       */
+/*   Created: 2024/09/20 09:54:32 by jalcausa          #+#    #+#             */
+/*   Updated: 2024/09/26 22:12:30 by jalcausa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 /*
-Iterates through the list lst and applies fucntion f to the content of each node
+Returns the size of the given list lst
 */
-void	ft_lstiter(t_list *lst, void (*f)(void *))
+int	ft_lstsize(t_list *lst)
 {
-	t_list	*aux;
+	t_list	*current;
+	int		res;
 
-	if (!lst || !f)
-		return ;
-	aux = lst;
-	while (aux)
+	current = 0;
+	if (!lst)
+		return (0);
+	res = 0;
+	current = lst;
+	while (current != NULL)
 	{
-		f(aux->content);
-		aux = aux->next;
+		++res;
+		current = current->next;
 	}
+	return (res);
 }

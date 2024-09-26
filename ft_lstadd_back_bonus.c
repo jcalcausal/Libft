@@ -1,34 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstsize.c                                       :+:      :+:    :+:   */
+/*   ft_lstadd_back_bonus.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jalcausa <jalcausa@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/20 09:54:32 by jalcausa          #+#    #+#             */
-/*   Updated: 2024/09/25 08:58:35 by jalcausa         ###   ########.fr       */
+/*   Created: 2024/09/20 18:22:51 by jalcausa          #+#    #+#             */
+/*   Updated: 2024/09/26 22:12:23 by jalcausa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 /*
-Returns the size of the given list lst
+Adds the given node new to the end of the list lst
 */
-int	ft_lstsize(t_list *lst)
+void	ft_lstadd_back(t_list **lst, t_list *new)
 {
-	t_list	*current;
-	int		res;
+	t_list	*last;
 
-	current = 0;
-	if (!lst)
-		return (0);
-	res = 0;
-	current = lst;
-	while (current != NULL)
+	if (!lst || !new)
+		return ;
+	if (*lst == NULL)
 	{
-		++res;
-		current = current->next;
+		*lst = new;
+		return ;
 	}
-	return (res);
+	last = ft_lstlast(*lst);
+	last->next = new;
 }

@@ -1,26 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd_front.c                                  :+:      :+:    :+:   */
+/*   ft_lstlast_bonus.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jalcausa <jalcausa@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/20 09:35:05 by jalcausa          #+#    #+#             */
-/*   Updated: 2024/09/21 17:57:10 by jalcausa         ###   ########.fr       */
+/*   Created: 2024/09/20 18:14:07 by jalcausa          #+#    #+#             */
+/*   Updated: 2024/09/26 21:48:18 by jalcausa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 /*
-Adds node new as the first node of a list. First it changes the next element of
-new to the previous first element of the list and then changes the pointer lst
-(that determines the beginning of the list) to new, the new first element
+Returns a pointer to the last element of the list
 */
-void	ft_lstadd_front(t_list **lst, t_list *new)
+t_list	*ft_lstlast(t_list *lst)
 {
-	if (!lst || !new)
-		return ;
-	new->next = *lst;
-	*lst = new;
+	t_list	*last;
+
+	if (!lst)
+		return (0);
+	last = lst;
+	while (last->next != NULL)
+		last = last->next;
+	return (last);
 }
