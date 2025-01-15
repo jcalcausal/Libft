@@ -6,7 +6,7 @@
 /*   By: jalcausa <jalcausa@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/11 19:46:37 by jalcausa          #+#    #+#             */
-/*   Updated: 2024/09/20 19:54:53 by jalcausa         ###   ########.fr       */
+/*   Updated: 2025/01/16 00:06:17 by jalcausa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,9 @@
 # include <stdlib.h>
 # include <limits.h>
 # include <stdio.h>
+# include <stdarg.h>
+# include <sys/types.h>
+# include <fcntl.h>
 
 /* Libft basic functions */
 
@@ -57,6 +60,26 @@ void	ft_putchar_fd(char c, int fd);
 void	ft_putstr_fd(char *s, int fd);
 void	ft_putendl_fd(char *s, int fd);
 void	ft_putnbr_fd(int n, int fd);
+
+/* printf functions*/
+int	ft_printf(char const *s, ...);
+int	ft_filter_format(char c, va_list *args);
+int	ft_putchar(char c);
+int	ft_putstr(char *str);
+int	ft_putptr(unsigned long int n);
+int	ft_count_digits(int n);
+int	ft_putnbr(int n);
+int	ft_count_digits_unsigned(unsigned int n);
+int	ft_putnbr_unsigned(unsigned int n);
+int	ft_puthex(unsigned long int n, char c);
+
+/* get_next_line functions*/
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 42
+# endif
+
+char	*get_next_line(int fd);
+
 
 /* Bonus */
 
