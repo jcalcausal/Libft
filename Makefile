@@ -61,19 +61,20 @@ FLAGS	= -Wall -Wextra -Werror
 all: $(NAME)
 
 $(NAME): $(OBJS)
-	ar rcs $(NAME) $(OBJS)
+	@ar rcs $(NAME) $(OBJS)
+	@echo " ... libft compiled ..."
 
 bonus: $(OBJS) $(OBJS_BONUS)
-	ar rcs $(NAME) $(OBJS) $(OBJS_BONUS)
+	@ar rcs $(NAME) $(OBJS) $(OBJS_BONUS)
 
 %.o: %.c
-	$(CC) $(FLAGS) -c $< -o $@
+	@$(CC) $(FLAGS) -c $< -o $@
 
 clean:
-		rm -f $(OBJS) $(OBJS_BONUS)
+		@rm -f $(OBJS) $(OBJS_BONUS)
 
 fclean: clean
-		rm -f $(NAME)
+		@rm -f $(NAME)
 
 re: fclean all
 
